@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApphotel0.Views.Sobre"
+             Title="Sobre"
+             BackgroundColor="#F2F2F2">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <Label Text="Sobre o Aplicativo"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#2D4C73" />
+
+            <Border Stroke="#D9D9D9"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="White"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Aplicativo Hotel"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#2D4C73" />
+
+                    <Label Text="Sistema desenvolvido para cálculo de hospedagem, informando adultos, crianças, suíte e período da estadia."
+                           FontSize="16"
+                           HorizontalTextAlignment="Center"
+                           TextColor="#333333" />
+
+                    <Label Text="Desenvolvedor: Danielle Sant' Anna Tuzzi"
+                           FontSize="16"
+                           TextColor="#333333" />
+
+                    <Label Text="Ano de desenvolvimento: 2026"
+                           FontSize="16"
+                           TextColor="#333333" />
+
+                    <Label Text="Curso Técnico em Desenvolvimento de Sistemas"
+                           FontSize="16"
+                           TextColor="#333333" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

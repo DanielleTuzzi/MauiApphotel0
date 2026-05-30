@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApphotel0.Views.ContratacaoHospedagem"
+             Title="ContratacaoHospedagem"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#0F172A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Hotel Premium"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#F8FAFC" />
+
+            <Label Text="Cálculo de Hospedagem"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#CBD5E1" />
+
+            <Border Stroke="#1E293B"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 25"
+                    BackgroundColor="#111827"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Quantidade de Hóspedes"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#F8FAFC" />
+
+                    <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="*,Auto,*"
+                          RowSpacing="18">
+
+                        <Label Grid.Row="0" Grid.Column="0"
+                               Text="Adultos"
+                               FontSize="16"
+                               TextColor="#CBD5E1"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="0" Grid.Column="1"
+                               Text="{Binding Source={x:Reference stp_adultos}, Path=Value}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#38BDF8" />
+
+                        <Stepper Grid.Row="0" Grid.Column="2"
+                                 x:Name="stp_adultos"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 Value="0" />
+
+                        <Label Grid.Row="1" Grid.Column="0"
+                               Text="Crianças"
+                               FontSize="16"
+                               TextColor="#CBD5E1"
+                               VerticalOptions="Center" />
+
+                        <Label Grid.Row="1" Grid.Column="1"
+                               Text="{Binding Source={x:Reference stp_criancas}, Path=Value}"
+                               FontSize="18"
+                               FontAttributes="Bold"
+                               TextColor="#38BDF8" />
+
+                        <Stepper Grid.Row="1" Grid.Column="2"
+                                 x:Name="stp_criancas"
+                                 Minimum="0"
+                                 Maximum="10"
+                                 Increment="1"
+                                 Value="0" />
+
+                    </Grid>
+
+                    <Label Text="Escolha sua Suíte"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="#F8FAFC" />
+
+                    <Border Stroke="#334155"
+                            StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#1E293B"
+                            Padding="5">
+
+                        <Picker x:Name="pck_quarto"
+                                Title="Selecione sua acomodação"
+                                ItemDisplayBinding="{Binding Descricao}"
+                                TitleColor="#94A3B8"
+                                TextColor="#F8FAFC" />
+
+                    </Border>
+
+                    <Border Stroke="#334155"
+                            StrokeShape="RoundRectangle 20"
+                            BackgroundColor="#1E293B"
+                            Padding="15">
+
+                        <VerticalStackLayout Spacing="15">
+
+                            <Label Text="Período da Estadia"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="#F8FAFC" />
+
+                            <HorizontalStackLayout Spacing="10">
+
+                                <Label Text="Check-in"
+                                       WidthRequest="90"
+                                       VerticalOptions="Center"
+                                       TextColor="#CBD5E1" />
+
+                                <DatePicker x:Name="dtpck_Checkin"
+                                            Format="dd/MM/yyyy"
+                                            TextColor="#F8FAFC"
+                                            DateSelected="dtpck_Checkin_DateSelected" />
+
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout Spacing="10">
+
+                                <Label Text="Check-out"
+                                       WidthRequest="90"
+                                       VerticalOptions="Center"
+                                       TextColor="#CBD5E1" />
+
+                                <DatePicker x:Name="dtpck_checkout"
+                                            Format="dd/MM/yyyy"
+                                            TextColor="#F8FAFC" />
+
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Border>
+
+                    <Button Text="Avançar"
+                            HeightRequest="55"
+                            CornerRadius="18"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            BackgroundColor="#2563EB"
+                            TextColor="White"
+                            Clicked="BtnAvancar_Clicked" />
+
+                    <Button Text="Sobre"
+                            HeightRequest="55"
+                            CornerRadius="18"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            BackgroundColor="#334155"
+                            TextColor="White"
+                            Clicked="BtnSobre_Clicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
