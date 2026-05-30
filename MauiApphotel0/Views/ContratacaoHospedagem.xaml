@@ -8,9 +8,7 @@
              BackgroundColor="#0F172A">
 
     <ScrollView>
-
-        <VerticalStackLayout Padding="20"
-                             Spacing="20">
+        <VerticalStackLayout Padding="20" Spacing="20">
 
             <Label Text="Hotel Premium"
                    FontSize="38"
@@ -40,44 +38,38 @@
                           ColumnDefinitions="*,Auto,*"
                           RowSpacing="18">
 
-                        <Label Grid.Row="0"
-                               Grid.Column="0"
+                        <Label Grid.Row="0" Grid.Column="0"
                                Text="Adultos"
                                FontSize="16"
                                TextColor="#CBD5E1"
-                               VerticalOptions="Center"/>
+                               VerticalOptions="Center" />
 
-                        <Label Grid.Row="0"
-                               Grid.Column="1"
+                        <Label Grid.Row="0" Grid.Column="1"
                                Text="{Binding Source={x:Reference stp_adultos}, Path=Value}"
                                FontSize="18"
                                FontAttributes="Bold"
-                               TextColor="#38BDF8"/>
+                               TextColor="#38BDF8" />
 
-                        <Stepper Grid.Row="0"
-                                 Grid.Column="2"
+                        <Stepper Grid.Row="0" Grid.Column="2"
                                  x:Name="stp_adultos"
                                  Minimum="0"
                                  Maximum="10"
                                  Increment="1"
                                  Value="0" />
 
-                        <Label Grid.Row="1"
-                               Grid.Column="0"
+                        <Label Grid.Row="1" Grid.Column="0"
                                Text="Crianças"
                                FontSize="16"
                                TextColor="#CBD5E1"
-                               VerticalOptions="Center"/>
+                               VerticalOptions="Center" />
 
-                        <Label Grid.Row="1"
-                               Grid.Column="1"
+                        <Label Grid.Row="1" Grid.Column="1"
                                Text="{Binding Source={x:Reference stp_criancas}, Path=Value}"
                                FontSize="18"
                                FontAttributes="Bold"
-                               TextColor="#38BDF8"/>
+                               TextColor="#38BDF8" />
 
-                        <Stepper Grid.Row="1"
-                                 Grid.Column="2"
+                        <Stepper Grid.Row="1" Grid.Column="2"
                                  x:Name="stp_criancas"
                                  Minimum="0"
                                  Maximum="10"
@@ -98,8 +90,9 @@
 
                         <Picker x:Name="pck_quarto"
                                 Title="Selecione sua acomodação"
+                                ItemDisplayBinding="{Binding Descricao}"
                                 TitleColor="#94A3B8"
-                                TextColor="#F8FAFC"/>
+                                TextColor="#F8FAFC" />
 
                     </Border>
 
@@ -120,11 +113,12 @@
                                 <Label Text="Check-in"
                                        WidthRequest="90"
                                        VerticalOptions="Center"
-                                       TextColor="#CBD5E1"/>
+                                       TextColor="#CBD5E1" />
 
                                 <DatePicker x:Name="dtpck_Checkin"
                                             Format="dd/MM/yyyy"
-                                            TextColor="#F8FAFC"/>
+                                            TextColor="#F8FAFC"
+                                            DateSelected="dtpck_Checkin_DateSelected" />
 
                             </HorizontalStackLayout>
 
@@ -133,11 +127,11 @@
                                 <Label Text="Check-out"
                                        WidthRequest="90"
                                        VerticalOptions="Center"
-                                       TextColor="#CBD5E1"/>
+                                       TextColor="#CBD5E1" />
 
                                 <DatePicker x:Name="dtpck_checkout"
                                             Format="dd/MM/yyyy"
-                                            TextColor="#F8FAFC"/>
+                                            TextColor="#F8FAFC" />
 
                             </HorizontalStackLayout>
 
@@ -151,7 +145,8 @@
                             FontSize="18"
                             FontAttributes="Bold"
                             BackgroundColor="#2563EB"
-                            TextColor="White"/>
+                            TextColor="White"
+                            Clicked="BtnAvancar_Clicked" />
 
                     <Button Text="Sobre"
                             HeightRequest="55"
@@ -160,14 +155,13 @@
                             FontAttributes="Bold"
                             BackgroundColor="#334155"
                             TextColor="White"
-                            Clicked="BtnSobre_Clicked"/>
+                            Clicked="BtnSobre_Clicked" />
 
                 </VerticalStackLayout>
 
             </Border>
 
         </VerticalStackLayout>
-
     </ScrollView>
 
 </ContentPage>

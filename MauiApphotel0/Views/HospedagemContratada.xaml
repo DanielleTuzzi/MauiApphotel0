@@ -1,12 +1,147 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApphotel0.Views.HospedagemContratada"
-             Title="HospedagemContratada">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#0F172A">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Hotel Premium"
+                   FontSize="38"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#F8FAFC" />
+
+            <Label x:Name="lbl_suite"
+                   Text="Suíte"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#38BDF8" />
+
+            <Border Stroke="#1E293B"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 25"
+                    BackgroundColor="#111827"
+                    Padding="20">
+
+                <VerticalStackLayout Spacing="20">
+
+                    <Label Text="Hospedagem Contratada"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#F8FAFC" />
+
+                    <Border Stroke="#334155"
+                            StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#1E293B"
+                            Padding="15">
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="25">
+
+                            <HorizontalStackLayout>
+                                <Label Text="Adultos: " TextColor="#CBD5E1" />
+                                <Label x:Name="lbl_adultos"
+                                       TextColor="#38BDF8"
+                                       FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+
+                            <HorizontalStackLayout>
+                                <Label Text="Crianças: " TextColor="#CBD5E1" />
+                                <Label x:Name="lbl_criancas"
+                                       TextColor="#38BDF8"
+                                       FontAttributes="Bold" />
+                            </HorizontalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                    </Border>
+
+                    <Border Stroke="#334155"
+                            StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#1E293B"
+                            Padding="15">
+
+                        <Grid ColumnDefinitions="*,*,*"
+                              RowDefinitions="Auto,Auto"
+                              RowSpacing="10">
+
+                            <Label Grid.Row="0" Grid.Column="0"
+                                   Text="Check-in"
+                                   TextColor="#CBD5E1"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Grid.Row="0" Grid.Column="1"
+                                   Text="Check-out"
+                                   TextColor="#CBD5E1"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label Grid.Row="0" Grid.Column="2"
+                                   Text="Estadia"
+                                   TextColor="#CBD5E1"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label x:Name="lbl_checkin"
+                                   Grid.Row="1" Grid.Column="0"
+                                   TextColor="#38BDF8"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label x:Name="lbl_checkout"
+                                   Grid.Row="1" Grid.Column="1"
+                                   TextColor="#38BDF8"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center" />
+
+                            <Label x:Name="lbl_estadia"
+                                   Grid.Row="1" Grid.Column="2"
+                                   TextColor="#38BDF8"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center" />
+
+                        </Grid>
+
+                    </Border>
+
+                    <Border Stroke="#334155"
+                            StrokeShape="RoundRectangle 15"
+                            BackgroundColor="#1E293B"
+                            Padding="15">
+
+                        <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+
+                            <Label Text="Valor Total:"
+                                   FontSize="18"
+                                   TextColor="#F8FAFC"
+                                   FontAttributes="Bold" />
+
+                            <Label x:Name="lbl_valor_total"
+                                   FontSize="18"
+                                   TextColor="#38BDF8"
+                                   FontAttributes="Bold" />
+
+                        </HorizontalStackLayout>
+
+                    </Border>
+
+                    <Button Text="Voltar"
+                            HeightRequest="55"
+                            CornerRadius="18"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            BackgroundColor="#334155"
+                            TextColor="White"
+                            Clicked="Button_Clicked" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
